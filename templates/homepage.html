@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>MemeCentral</title>
+
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'homepage.css' %}">
+
+</head>
+<body>
+
+	<div class="navbar">
+		
+		<h3>MemeCentral</h3>
+
+		<nav>
+			<a href="#">ALL</a>
+			<a href="/cricket">CRICKET</a>
+			<a href="/engineering">ENGINEER</a>
+			<a href="#">XAVIAR</a>
+		</nav>
+
+	</div>
+
+	<div class="meme_section">
+		{% for meme in memes%}
+			<div class="meme_card">
+				<img class="meme_image" src="{{meme}}"></img>
+
+				<div class="down_view">
+					<a href="#">DOWNLOAD</a>
+					<a href="{{meme}}">VIEW</a>
+				</div>
+		    </div>
+		{% endfor %}
+	</div>
+
+</body>
+</html>
